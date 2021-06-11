@@ -112,9 +112,9 @@ a {
 }
 
 .demoImg{
-    height: 50vh;
+    max-height: 90%;
     
-    /* width:50vw; */
+    max-width:90%;
 
 
 }

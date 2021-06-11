@@ -31,16 +31,17 @@
 }
 
 .descriptionContainer{
-    font-size: small;
-    font-size: 5vh;
+
+    font-size: 3vh;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     
     text-align: justify;
     overflow-wrap: break-word;
-
     color: rebeccapurple;
     color:"red";
+    text-size-adjust: auto;
+    max-height: 80%;
 
 }
 
