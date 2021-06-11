@@ -1,0 +1,52 @@
+#flyoutMenu {
+    width: 20vw;
+    height: 100vh;
+    background-color: #FFE600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform .3s
+                cubic-bezier(0, .52, 0, 1);
+    overflow: scroll;
+    z-index: 1000000;
+  }
+   
+  #flyoutMenu.hide {
+    transform: translate3d(-100vw, 0, 0);
+    transition-duration: 0.5s;
+}
+
+
+#flyoutMenu.show {
+    transform: translate3d(0vw, 0, 0);
+    overflow: hidden;
+    transition-duration: 0.5s;
+  }
+   
+  #flyoutMenu h2 a {
+    color: #333;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+   
+  #flyoutMenu h2 a:hover {
+    text-decoration: underline;
+  }
+
+@media (min-width: 648px) {
+    /* #flyoutMenu.show{
+        display: none;
+        transform: translate3d(-100vw, 0, 0);
+    }
+
+    #flyoutMenu.hide{
+        transform: translate3d(-100vw, 0, 0);
+      }
+
+    #floutMenu{
+        display: none;
+        transform: translate3d(-100vw, 0, 0);
+      } */
+
+
+}

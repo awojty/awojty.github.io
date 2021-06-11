@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;800&display=swap');
+
+
+.box{
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    margin:2%;
+    background-color: white;
+    overflow: hidden;
+    height: 78vh;
+    width:70vw;
+    text-align: justify;
+    box-shadow: 0px 12px 18px -6px rgba(0,0,0.3);
+
+}
+
+
+.grids{
+    margin:auto;
+    max-width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contentSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.projectName{
+    font-family: 'Poppins', sans-serif;
+    font-size: 5vh;
+    font-weight: 500;
+    padding: 2vw;
+
+
+}
+
+.toolsSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.tool{
+    border-radius: 25px;
+    /* border: 2px solid black; */
+    background-color: #6930c3;
+    padding: 2%;
+    color: white;
+    min-width: 20%;
+    text-align: center;
+   
+}
+
+.descriptionSection{
+    text-align: left;
+    padding-right: 2vh;
+    padding-left: 2vh;
+    padding-bottom: 2vh;
+
+}
+.buttonSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.infoSection{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    height: 100%;
+    /* justify-content: space-around; */
+}
+
+.buttonProject{
+    background-color: #48BFE3;
+    border-radius: 25px;
+    padding: 5px;
+    min-width: 20%;
+    text-align: center;
+
+}
+
+
+
+@media (max-width: 648px) {
+    .demoSection{
+        display: none;
+    }
+    .contentSection{
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+}
+
+.buttonSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a {
+    display: block;
+}
+
+.demoImg{
+    height: 50vh;
+    
+    /* width:50vw; */
+
+
+}
