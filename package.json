@@ -1,7 +1,10 @@
 {
+  "homepage": "http://awojty.github.io",
   "name": "personal_website",
   "version": "0.1.0",
   "private": true,
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@react-spring/parallax": "^9.2.3",
