@@ -122,10 +122,23 @@ export const MyMenu = props => {
 
 function App() {
   const [visibleSection, setVisibleSection] = useState();
-  const [visibleMenu, setMenu] =useState(false);
+  const visibleMenu = useRef(false);
+  const menuvisibility = useRef("hide");
 
+
+  
   const toggleMenu = () => {
-    setMenu(!visibleMenu);
+    //visibleMenu = !visibleMenu;
+    if(menuvisibility.current === "hide"){
+      menuvisibility.current = "show"
+
+    }else{
+      menuvisibility.current = "hide"
+    }
+    visibleMenu.current = !visibleMenu.current;
+    console.log("vismenu", visibleMenu.current);
+    console.log("menuvisibility", menuvisibility.current)
+    // console.log("current section", currentSection);
   }
 
   
@@ -137,6 +150,9 @@ function App() {
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
 
+  const [currentSection, setCurrentSection] =useState(headerRef);
+
+
 
 
   const sectionRefs = [
@@ -147,62 +163,65 @@ function App() {
 
   ];
 
-  var menuvisibility = "hide";
+  // var menuvisibility = "hide";
+
+  // console.log("vis menu current", visibleMenu.current)
  
-  if (visibleMenu) {
-    menuvisibility = "show";
-  }
+  // if (visibleMenu.current) {
+  //   menuvisibility = "show";
+  // }
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const { height: headerHeight } = getDimensions(headerRef.current);
-      const scrollPosition = window.scrollY + headerHeight;
 
-      const selected = sectionRefs.find(({ section, ref }) => {
-        const ele = ref.current;
-        if (ele) {
-          const { offsetBottom, offsetTop } = getDimensions(ele);
-          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
-        }
-      });
 
-      if (selected && selected.section !== visibleSection) {
-        setVisibleSection(selected.section);
-      } else if (!selected && visibleSection) {
-        setVisibleSection(undefined);
-      }
-    };
+  // useEffect(() => {
+  //   console.log("useeffect")
+  //   const handleScroll = () => {
+  //     const { height: headerHeight } = getDimensions(headerRef.current);
+  //     const scrollPosition = window.scrollY + headerHeight;
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [visibleSection]);
+  //     const selected = sectionRefs.find(({ section, ref }) => {
+  //       const ele = ref.current;
+  //       if (ele) {
+  //         const { offsetBottom, offsetTop } = getDimensions(ele);
+  //         return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+  //       }
+  //     });
+
+  //     if (selected && selected.section !== visibleSection) {
+  //       setVisibleSection(selected.section);
+  //     } else if (!selected && visibleSection) {
+  //       setVisibleSection(undefined);
+  //     }
+  //   };
+
+  //   handleScroll();
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [visibleSection]);
 
     return(
       <div className="App">
          
-        {/* <div className="background" onClick={toggleMenu} >
+        <div className="background" onClick={toggleMenu} >
            
            <svg viewBox="0 0 100 80" width="40" height="40">
      <rect width="100" height="20"></rect>
      <rect y="30" width="100" height="20"></rect>
      <rect y="60" width="100" height="20"></rect>
    </svg>
-   </div>  */}
-          <div id="flyoutMenu"
-          ref={headerRef}
-        
-             
-              
-              className={menuvisibility}>
+   </div> 
+          {/* <div id="flyoutMenu"
+            ref={headerRef}
+            className={menuvisibility}>
            <h2><a href="#" onClick={toggleMenu}>X</a></h2>
            <button
                     type="button"
                     className={`header_link ${visibleSection === "About" ? "selected" : ""}`}
                     onClick={() => {
+                      // setCurrentSection(aboutRef);
                       scrollTo(aboutRef.current);
                     }}
                   >
@@ -212,6 +231,7 @@ function App() {
                     type="button"
                     className={`header_link ${visibleSection === "Projects" ? "selected" : ""}`}
                     onClick={() => {
+                      //setCurrentSection(projectsRef);
                       scrollTo(projectsRef.current);
                     }}
                   >
@@ -220,7 +240,7 @@ function App() {
       
       
       
-         </div>    
+         </div>    */}
           
                      
           
@@ -283,7 +303,6 @@ function App() {
           </div> 
        
       </div>  */}
-
       <Title refProp={aboutRef} />
         <Projects refProp = {projectsRef}/>
         <Skills refProp = {skillsRef}/>

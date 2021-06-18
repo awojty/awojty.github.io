@@ -6,6 +6,7 @@ import "./Project.css";
 import read from "../icons/whatweread.png"
 import meow from "../icons/growthmeow.png"
 import bingo from "../icons/bingo.png"
+import golight from "../icons/go_light.png"
 
 
 const Project = props => {
@@ -21,9 +22,11 @@ const Project = props => {
   }else if(props.title == "WhatWeRead"){
     demo = read;
 
-  }else{
-    demo = bingo;
+  }else if(props.title =="GoLight") {
+    demo = golight;
 
+  }else{
+    demo=bingo;
   }
 
 

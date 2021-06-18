@@ -28,8 +28,6 @@ export const Skill = props => {
         icon = web;
     }
 
-    console.log(props.skills);
-
     
   
     return(<div className="skillContainer">
